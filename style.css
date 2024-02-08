@@ -1,90 +1,178 @@
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #3e3e42;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-header {
-  display: flex;
-  height: 60px;
-  background-color: #2d2d30;
-  margin: 0;
-  justify-content: space-between;
-  align-items: center;
+.headerlogo {
+    background-color: #FFC328; /* gold 3 with gray 4 logo*/
+    height: 18px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-header h1 {
-  color: white;
-  margin-left: 20px;
+.header {
+    background-color: #065577; /* navy 3 */
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
-header button {
-  height: 100%;
-  width: 100px;
-  background-color: #007acc;
-  border: 0;
-  font-size: 16px;
-  color: white;
+.pclogo {
+    width: auto;
+    height: 27px; 
 }
 
-header button:hover {
-  background-color: #3a95d2;
-  color: black;
-  cursor: pointer;
+.menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 15px;
 }
 
-.container {
-  display: flex;
-  width: 100%;
-  height: calc(100dvh - 60px);
+.bar {
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
 }
 
-.side-panel {
-  z-index: 1;
-  height: calc(100dvh - 60px);
-  display: block;
-  overflow: hidden;
-  background-color: #252526;
-  width: 180px;
+.title {
+    font-size: 18px;
+    margin: 0;
 }
 
-.side-panel button {
-  display: block;
-  width: 100%;
-  height: 50px;
-  border: 0;
-  background-color: #252526;
-  color: white;
+.notification-icon {
+    width: auto;
+    height: 27px;
+    margin-left: auto;
 }
 
-.side-panel button:hover {
-  background-color: #4c4c4c;
-  cursor: pointer;
+.notification-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
 }
 
-.side-panel button:first-of-type {
-  margin-top: 30px;
-  margin-bottom: 30px;
+.notification-btn:focus {
+    outline: none; /* Remove default focus outline */
 }
+
+.person-icon {
+    width: auto;
+    height: 29px;
+    margin-left: auto; /* make the click only in the icon space */
+}
+
+.person-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 15px; /* space from notification icon */
+}
+
+.person-btn:focus {
+    outline: none; /* Remove default focus outline */
+}
+
+.content {
+    padding: 0px;
+}
+
+/* menu options UI */
+.menu-options {
+    display: none;
+    position: fixed; /* Position the menu relative to the viewport */
+    top: 0px;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background-color: #0D3354; /* navy 4 */
+    z-index: 999; /* Ensure the menu appears above other content */
+    padding: 20px; /* Add padding to the menu content */
+  }
+  
+  .menu-options.active {
+    display: block;
+  }
+  
+  .menu-options ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: blueviolet;
+  }
+  
+  .menu-options li {
+    margin-bottom: 0px; /* Increase spacing between menu items */
+    cursor: pointer;
+  }
+  
+  .menu-options a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .close-btn {
+    position: left;
+    top: 20px; /* Adjust the position as needed */
+    right: 20px; /* Adjust the position as needed */
+    color: #fff;
+    background: black;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+/* end of menu options UI */
+
+/* .footer {
+    background-color: #bcbec0; 
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+} */
 
 #webchatcanvas {
-  display: block;
-  height: calc(100dvh - 130px);
-  width: 75%;
-  margin: 0 auto;
-}
-
-@media (max-width: 788px) {
-  #webchatcanvas {
+    display: block;
+    height: calc(100dvh - 115px);
     width: 100%;
-    height: calc(100dvh - 60px);
+    margin: 0 auto;
   }
 
-  .side-panel {
-    display: none;
-  }
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    .header {
+        padding: 15px;
+    }
 
-  header h1 {
-    font-size: medium;
-  }
+    .title {    
+        font-size: 24px;
+    }
+
+    .notification-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .person-icon {
+        width: auto;
+        height: 45px; 
+    }
+    
+    .content {
+        padding: 30px;
+    }
+
+    .footer {
+        padding: 20px;
+    }
 }

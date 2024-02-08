@@ -213,3 +213,19 @@ document.addEventListener('DOMContentLoaded', function () {
     return pElement && (pElement.textContent.trim().startsWith('Please tell us why') || pElement.textContent.trim().startsWith('Please type your') || pElement.textContent.trim().startsWith('If I may assist you') || pElement.textContent.trim().startsWith('Type your question') || pElement.textContent.trim().startsWith('Type a detailed description') || pElement.textContent.trim().startsWith('Please type your comments') || pElement.textContent.trim().startsWith('Please explain in detail why') || pElement.textContent.trim().startsWith('What school is') || pElement.textContent.trim().startsWith('Please use the') || pElement.textContent.trim().startsWith('Please enter your') || pElement.textContent.trim().startsWith("I’m sorry, I’m not sure") || pElement.textContent.trim().startsWith("Wonderful! Use the space below"));
   }
 });
+
+
+  // Open and close menu button in header
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuButton = document.querySelector('.menu-btn');
+    const menuOptions = document.querySelector('.menu-options');
+    const closeButton = document.querySelector('.close-btn');
+  
+    menuButton.addEventListener('click', function() {
+      menuOptions.classList.toggle('active');
+    });
+  
+    closeButton.addEventListener('click', function() {
+      menuOptions.classList.remove('active');
+    });
+  });

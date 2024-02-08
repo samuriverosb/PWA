@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
-  <title>BYU Pathway Student Guide</title>
+  <title>Pathway Companion</title>
 </head>
 <body>
   <header>
-    <h1>BYU Pathway Student Guide</h1>
+    <h1>Pathway Companion</h1>
     <button class="login-button">Log In</button>
   </header>
 
@@ -16,6 +16,7 @@
     <div class="side-panel">
       <button>General Guide</button>
       <button>Student Guide</button>
+      <button onclick="main()">Receive Notifications</button>
     </div>
 
     <div id="webchatcanvas"></div>
@@ -23,5 +24,6 @@
 
   <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
   <script src="./script.js"></script>
+  <script src="./push.js"></script>
 </body>
 </html>

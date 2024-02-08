@@ -10,21 +10,36 @@
     botAvatarInitials: '',
     backgroundColor: '#00000000',
     bubbleBackground: '#00000000',
-    bubbleTextColor: '#ffffff',
+    bubbleTextColor: '#000000',
     bubbleBorderRadius: 10,
     bubbleFromUserBackground: '#00000000',
     bubbleFromUserBorderRadius: 10,
-    bubbleFromUserTextColor: '#ffffff',
+    bubbleFromUserTextColor: '#000000',
     rootHeight: '100%',
     rootWidth: '100%',
     transitionDuration: '.5s',
-    sendBoxBackground: '#00000000',
-    sendBoxTextColor: '#ffffff',
+    sendBoxBackground: '#00000',
+    sendBoxTextColor: '#000000',
     sendBoxBorderBottom: 'solid 1px #E6E6E6',
     sendBoxBorderLeft: 'solid 1px #E6E6E6',
     sendBoxBorderRight: 'solid 1px #E6E6E6',
     sendBoxBorderTop: 'solid 1px #E6E6E6',
   };
+
+  // Open and close menu button in header
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuButton = document.querySelector('.menu-btn');
+    const menuOptions = document.querySelector('.menu-options');
+    const closeButton = document.querySelector('.close-btn');
+  
+    menuButton.addEventListener('click', function() {
+      menuOptions.classList.toggle('active');
+    });
+  
+    closeButton.addEventListener('click', function() {
+      menuOptions.classList.remove('active');
+    });
+  });
 
   // Specifies the token endpoint URL.
   // To get this value, visit Copilot Studio > Settings > Channels > Mobile app page.

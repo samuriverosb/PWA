@@ -7,18 +7,45 @@
   <title>Pathway Companion</title>
 </head>
 <body>
+  <!-- header used only for the BYU-Pathway logo -->
   <header>
-    <h1>Pathway Companion</h1>
-    <button class="login-button">Log In</button>
+    <div class="headerlogo">
+      <img src="./media/BYU-logo_temporal.svg"  class="pclogo">
+    </div>
+  </header>
+  <!-- header with options for user -->
+  <header>
+    <div class="header">
+      <!-- Hamburguer menu design-->
+      <button class="menu-btn" aria-label="Toggle Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      </button>
+      <!-- end of Hamburguer menu -->
+      <h1 class="title">Companion</h1>
+      <!-- notification button -->
+      <button class="notification-btn" onclick="main()" aria-label="Show notifications">
+        <img src="./media/notification-new-svgrepo-com.svg" class="notification-icon">
+      </button>
+      <!-- user button -->
+      <button class="person-btn" aria-label="Sing Out">
+        <img src="./media/user-xmark-alt-1-svgrepo-com.svg" class="person-icon">
+      </button>
+    </div>
+    <!-- Hamburguer menu options -->
+    <nav class="menu-options">
+      <button class="close-btn" aria-label="Close Menu">&#10006;</button>
+      <ul>
+        <li><a href="#">My Saved Chats</a></li>
+        <li><a href="#">Report an Error</a></li>
+        <li><a href="#">Sign Out</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <div class="container">
-    <div class="side-panel">
-      <button>General Guide</button>
-      <button>Student Guide</button>
-      <button onclick="main()">Receive Notifications</button>
-    </div>
-
+  <!-- show copilot canvas -->
+  <div class="content">
     <div id="webchatcanvas"></div>
   </div>
 

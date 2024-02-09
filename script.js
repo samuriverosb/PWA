@@ -10,16 +10,16 @@
     botAvatarInitials: '',
     backgroundColor: '#00000000',
     bubbleBackground: '#00000000',
-    bubbleTextColor: '#ffffff',
+    bubbleTextColor: '#000000',
     bubbleBorderRadius: 10,
     bubbleFromUserBackground: '#00000000',
     bubbleFromUserBorderRadius: 10,
-    bubbleFromUserTextColor: '#ffffff',
+    bubbleFromUserTextColor: '#000000',
     rootHeight: '100%',
     rootWidth: '100%',
     transitionDuration: '.5s',
-    sendBoxBackground: '#00000000',
-    sendBoxTextColor: '#ffffff',
+    sendBoxBackground: '#00000',
+    sendBoxTextColor: '#000000',
     sendBoxBorderBottom: 'solid 1px #E6E6E6',
     sendBoxBorderLeft: 'solid 1px #E6E6E6',
     sendBoxBorderRight: 'solid 1px #E6E6E6',
@@ -212,4 +212,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const pElement = node.querySelector('.webchat__basic-transcript__activity-body .webchat__stacked-layout__content .webchat__stacked-layout__message-row .webchat__stacked-layout__message .webchat__bubble__content div p');
     return pElement && (pElement.textContent.trim().startsWith('Please tell us why') || pElement.textContent.trim().startsWith('Please type your') || pElement.textContent.trim().startsWith('If I may assist you') || pElement.textContent.trim().startsWith('Type your question') || pElement.textContent.trim().startsWith('Type a detailed description') || pElement.textContent.trim().startsWith('Please type your comments') || pElement.textContent.trim().startsWith('Please explain in detail why') || pElement.textContent.trim().startsWith('What school is') || pElement.textContent.trim().startsWith('Please use the') || pElement.textContent.trim().startsWith('Please enter your') || pElement.textContent.trim().startsWith("I’m sorry, I’m not sure") || pElement.textContent.trim().startsWith("Wonderful! Use the space below"));
   }
+});
+
+// Open and close menu button in header
+document.addEventListener('DOMContentLoaded', function() {
+  const menuButton = document.querySelector('.menu-btn');
+  const menuOptions = document.querySelector('.menu-options');
+  const closeButton = document.querySelector('.close-btn');
+
+  menuButton.addEventListener('click', function() {
+    menuOptions.classList.toggle('active');
+  });
+
+  closeButton.addEventListener('click', function() {
+    menuOptions.classList.remove('active');
+  });
 });

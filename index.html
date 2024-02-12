@@ -30,19 +30,28 @@
       </button>
       <!-- user button -->
       <button class="person-btn" aria-label="Sing Out">
-        <img src="./media/user-xmark-alt-1-svgrepo-com.svg" class="person-icon">
+        <img src="./media/user-alt-1-svgrepo-com.svg" class="person-icon">
       </button>
     </div>
     <!-- Hamburguer menu options -->
     <nav class="menu-options">
       <button class="close-btn" aria-label="Close Menu">&#10006;</button>
       <ul>
-        <li><a href="#">My Saved Chats</a></li>
-        <li><a href="#">Report an Error</a></li>
-        <li><a href="#">Sign Out</a></li>
+        <li><a href="#">Feedback</a></li>
+        <li id="openBtn"><a href="#">How to Install</a></li>
       </ul>
     </nav>
   </header>
+
+
+  <div id="popup" class="hidden">
+    <div id="popupContent">
+      <button id="closeBtn" class="close-btn" aria-label="Close Menu">&#10006;</button>
+      <h2>How to Install</h2>
+      <p>Instructions on how to install</p>
+    </div>
+  </div>
+
 
   <!-- show copilot canvas -->
   <div class="content">

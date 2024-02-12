@@ -228,3 +228,19 @@ document.addEventListener('DOMContentLoaded', function() {
     menuOptions.classList.remove('active');
   });
 });
+
+
+
+
+const openBtn = document.getElementById('openBtn');
+const closeBtn = document.getElementById('closeBtn');
+const popup = document.getElementById('popup');
+const allButtons = document.querySelectorAll('button');
+
+openBtn.addEventListener('click', () => {
+  popup.classList.remove('hidden');
+});
+
+closeBtn.addEventListener('click', () => {
+  popup.classList.add('hidden');
+});

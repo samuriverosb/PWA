@@ -103,7 +103,7 @@ body {
   position: fixed; /* Position the menu relative to the viewport */
   top: 54px;
   left: 0;
-  width:100%;
+  width: 100%;
   height: calc(100dvh - 54px);
   background-color: #065577; /* navy 4 */
   z-index: 999; /* Ensure the menu appears above other content */
@@ -147,14 +147,6 @@ body {
 .close-btn:hover {
   background-color: #118cc1;
 }
-/* end of menu options UI */
-
-/* .footer {
-  background-color: #bcbec0; 
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-} */
 
 #webchatcanvas {
   display: block;
@@ -168,6 +160,15 @@ body {
   #webchatcanvas {
     width: 70%;
     margin: 0 auto;
+    height: calc(100dvh - 207px);
+  }
+
+  .menu-options {
+    width: 200px;
+  }
+
+  #popup {
+    max-width: 300px;
   }
   /* .header {
       padding: 15px;
@@ -194,4 +195,28 @@ body {
   .footer {
       padding: 20px;
   } */
+}
+
+#popup {
+  position: fixed; /* Position the menu relative to the viewport */
+  top: 54px;
+  left: 0;
+  width: 100%;
+  height: calc(100dvh - 54px);
+  background-color: #065577; /* navy 4 */
+  z-index: 9999; /* Ensure the menu appears above other content */
+  padding: 0; /* Add padding to the menu content */
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+#closeBtn {
+  text-align: left;
+}
+
+#popupContent h2, #popupContent p {
+  text-align: center;
 }

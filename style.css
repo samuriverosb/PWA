@@ -4,13 +4,24 @@ body {
   padding: 0;
 }
 
+/* BYU-Pathway Logo and background format*/
 .headerlogo {
-  background-color: #FFC328; /* gold 3 with gray 4 logo*/
-  height: 18px;
-  padding: 18px;
+  background-color: #FFC328;/* gold 3 with gray 4 logo*/
+  width: 65px;
+  height: 55px;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  padding: 10px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.pclogo {
+  width: auto;
+  height: 40px; 
 }
 
 .header {
@@ -18,13 +29,31 @@ body {
   color: #fff;
   height: 53px;
   display: flex;
-  justify-content: left;
   align-items: center;
 }
 
-.pclogo {
-  width: auto;
-  height: 27px; 
+.title {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  margin-left: 105px;
+  margin-right: auto;
+}
+
+.sign-in {
+  border: none;
+  cursor: pointer;
+  color: #454540 /* gray 4 */;
+  font-weight: bolder;
+  background-color: #FFC328;
+  padding: 8px;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: 0px;
+}
+
+.sign-in:hover {
+  background-color: #FED77E; /* gold 5 */
 }
 
 .menu-btn {
@@ -35,6 +64,7 @@ body {
   margin-right: 5px;
   height: 100%;
   padding: 10px;
+  margin-left: 10px; /* move this to adjust the space between sign-in and menu */
 }
 
 .bar {
@@ -45,54 +75,11 @@ body {
   margin: 4px 0;
 }
 
-.title {
-  font-size: 18px;
-  margin: 0;
+.menu-btn:hover, .menu-options li:hover {
+  background-color: #3793AB; /* navy 2 */
 }
 
-.notification-icon {
-  width: auto;
-  height: 27px;
-  margin-left: auto;
-}
-
-.notification-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  margin-left: auto;
-  height: 100%;
-  padding: 10px;
-}
-
-.notification-btn:focus {
-  outline: none; /* Remove default focus outline */
-}
-
-.person-icon {
-  width: auto;
-  height: 29px;
-  margin-left: auto; /* make the click only in the icon space */
-}
-
-.person-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  height: 100%;
-  padding: 10px;
-}
-
-.person-btn:hover, .notification-btn:hover, .menu-btn:hover {
-  background-color: #118cc1;
-}
-
-.person-btn:focus {
-  outline: none; /* Remove default focus outline */
-}
-
+/* adjust the chatbot screen */
 .content {
   padding: 0px;
 }
@@ -126,10 +113,6 @@ body {
   cursor: pointer;
 }
 
-.menu-options li:hover {
-  background-color: #118cc1;
-}
-
 .menu-options a {
   color: #fff;
   text-decoration: none;
@@ -149,13 +132,6 @@ body {
 }
 /* end of menu options UI */
 
-/* .footer {
-  background-color: #bcbec0; 
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-} */
-
 #webchatcanvas {
   display: block;
   height: calc(100dvh - 107px);
@@ -164,34 +140,11 @@ body {
 }
 
 /* Media query for larger screens */
+/* at this time it will only adjust how
+the chatbot is showed */
 @media (min-width: 768px) {
   #webchatcanvas {
     width: 70%;
     margin: 0 auto;
   }
-  /* .header {
-      padding: 15px;
-  }
-
-  .title {    
-      font-size: 24px;
-  }
-
-  .notification-icon {
-      width: 40px;
-      height: 40px;
-  }
-
-  .person-icon {
-      width: auto;
-      height: 45px; 
-  }
-  
-  .content {
-      padding: 30px;
-  }
-
-  .footer {
-      padding: 20px;
-  } */
 }

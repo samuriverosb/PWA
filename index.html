@@ -8,54 +8,49 @@
     <title>Digital Companion</title>
   </head>
   <body>
-    <!-- header used only for the BYU-Pathway logo -->
+    <!-- BYU-Pathway logo -->
+    <div class="headerlogo">
+      <img src="./media/byu-pw-stackedgray.svg" class="pclogo">
+    </div>
+    <!-- START OF HEADER with options for user -->
     <header>
-      <div class="headerlogo">
-        <img src="./media/BYU-logo_temporal.svg"  class="pclogo">
-      </div>
-    </header>
-    <!-- header with options for user -->
-    <header>
+      <!-- class that gives the format for most of header elements -->
       <div class="header">
+        <h1 class="title">Digital Companion</h1>
+        <a href="#">
+          <button class="sign-in">Sign In</button>
+        </a>
         <!-- Hamburguer menu design-->
         <button class="menu-btn" aria-label="Toggle Menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </button>
         <!-- end of Hamburguer menu -->
-        <h1 class="title">Digital Companion</h1>
-        <!-- notification button -->
-        <button class="notification-btn" aria-label="Show notifications">
-          <img src="./media/notification-new-svgrepo-com.svg" class="notification-icon">
-        </button>
-        <!-- user button -->
-        <button class="person-btn" aria-label="Sing Out">
-          <img src="./media/user-xmark-alt-1-svgrepo-com.svg" class="person-icon">
-        </button>
       </div>
       <!-- Hamburguer menu options -->
       <nav class="menu-options">
         <button class="close-btn" aria-label="Close Menu">&#10006;</button>
         <ul>
-          <li><a href="#">My Saved Chats</a></li>
-          <li><a href="#">Report an Error</a></li>
-          <li><a href="#">Sign Out</a></li>
+          <li>
+            <a href="#">My Saved Chats</a>
+          </li>
+          <li>
+            <a href="#">Report an Error</a>
+          </li>
+          <li>
+            <a href="#">Sign Out</a>
+          </li>
         </ul>
       </nav>
     </header>
-
-    <!-- show copilot canvas -->
+    <!-- START OF BODY -->
+    <!-- show copilot/virtual agent/chatbot canvas -->
     <div class="content">
       <div id="webchatcanvas"></div>
     </div>
     <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
     <script src="./script.js"></script>
     </div>
-    <!-- <footer>
-      <div class="footer">
-           Footer text 
-      </div>
-      </footer> -->
   </body>
 </html>

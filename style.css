@@ -163,16 +163,18 @@ body {
   position: absolute;
   bottom: 10px;
   left: 50%;
- /* add to the center */
   transform: translateX(-50%);
   color: #454540;
-  background: none;
-  border: 1px solid #ccc;
+  background: #FFC328;
+  font-weight: bolder;
+  border: none;
+  outline: none;
   border-radius: 5px;
   cursor: pointer;
   padding: 10px;
   padding-right: 30px;
   padding-left: 30px;
+  margin-bottom: 8px;
 }
 #webchatcanvas {
   display: block;

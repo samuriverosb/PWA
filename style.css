@@ -1,6 +1,6 @@
 :root{
-  --bar-width: 60px;
-  --bar-height: 8px;
+  --bar-width: 30px;
+  --bar-height: 4px;
   --hamburguer-gap: 6px;
   --foreground: #333;
   --background: white;
@@ -76,14 +76,13 @@ body {
   gap: var(--hamburguer-gap);
   width: max-content;
   position: absolute;
-  top: var(--hamburguer-margin);
-  right: var(--hamburguer-margin);
+  top: 13px;
+  right: 10px;
   z-index: 999999;
   cursor: pointer
 }
 
 .menu-btn:has(input:checked){
-  --foreground:white;
   --background:#333;
 }
 
@@ -129,13 +128,12 @@ body {
   translate: 100%;
   padding: 0.5rem 1rem;
   padding-top: calc(var(--menu-icon-height) + var(--hamburguer-margin) + 1rem);
-  background-color: var(--foreground);
+  background-color: #065577;
   color: var(--background);
-  max-width: 100vh;
-  width: 100px;
-  min-height: 170vh;
+  max-width: 100vw;
+  width: 120px;
+  height: 200px;
   z-index: 9999;
-
   position: absolute;
   display: none;
   right: var(--hamburguer-margin);
@@ -165,7 +163,7 @@ display: contents;
   margin: 4px 0;
 }
 
-.menu-btn:hover, .menu-options li:hover {
+.menu-options li:hover {
   background-color: #3793AB; /* navy 2 */
 }
 

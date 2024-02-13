@@ -146,6 +146,7 @@ body {
 .sidebar.create{
   display: flex;
   transition: translate var(--animation-timing);
+  right: 0;
 }
 
 .sidebar.active {

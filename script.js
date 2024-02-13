@@ -216,10 +216,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Open and close menu button in header
+  
   document.addEventListener('DOMContentLoaded', function() {
+    const menuCheckbox = document.getElementById('menu-checkbox');
+    const menuOptions = document.querySelector('.sidebar');
+
+    menuCheckbox.addEventListener('change', function() {
+        if (menuCheckbox.checked) {
+            menuOptions.classList.add('create');
+            setTimeout(function() {
+                menuOptions.classList.add('active');
+            }, 50); // Retraso para asegurar la transición
+        } else {
+            menuOptions.classList.remove('active');
+            setTimeout(function() {
+                menuOptions.classList.remove('create');
+            }, 300); // Retraso para asegurar la transición
+        }
+    });
+});
+
+/*   document.addEventListener('DOMContentLoaded', function() {
     const menuButton = document.querySelector('.menu-btn');
-    const menuOptions = document.querySelector('.menu-options');
-    const closeButton = document.querySelector('.close-btn');
+    const menuOptions = document.querySelector('.sidebar');
+    const closeButton = document.querySelector('.menu-btn');
   
     menuButton.addEventListener('click', function() {
       menuOptions.classList.toggle('active');
@@ -228,4 +248,4 @@ document.addEventListener('DOMContentLoaded', function () {
     closeButton.addEventListener('click', function() {
       menuOptions.classList.remove('active');
     });
-  });
+  }); */

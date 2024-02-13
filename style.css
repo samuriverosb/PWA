@@ -3,10 +3,10 @@ body {
   margin: 0;
   padding: 0;
 }
-
 /* BYU-Pathway Logo and background format*/
 .headerlogo {
-  background-color: #FFC328;/* gold 3 with gray 4 logo*/
+  background-color: #FFC328;
+ /* gold 3 with gray 4 logo*/
   width: 65px;
   height: 55px;
   position: absolute;
@@ -18,20 +18,18 @@ body {
   align-items: center;
   z-index: 50;
 }
-
 .pclogo {
   width: auto;
-  height: 40px; 
+  height: 40px;
 }
-
 .header {
-  background-color: #065577; /* navy 3 */
+  background-color: #065577;
+ /* navy 3 */
   color: #fff;
   height: 53px;
   display: flex;
   align-items: center;
 }
-
 .title {
   font-size: 18px;
   margin: 0;
@@ -39,11 +37,12 @@ body {
   margin-left: 105px;
   margin-right: auto;
 }
-
 .sign-in {
   border: none;
   cursor: pointer;
-  color: #454540 /* gray 4 */;
+  color: #454540 
+ /* gray 4 */
+ ;
   font-weight: bolder;
   background-color: #FFC328;
   padding: 8px;
@@ -51,11 +50,10 @@ body {
   margin-left: auto;
   margin-right: 0px;
 }
-
 .sign-in:hover {
-  background-color: #FED77E; /* gold 5 */
+  background-color: #FED77E;
+ /* gold 5 */
 }
-
 .menu-btn {
   background: none;
   border: none;
@@ -64,9 +62,9 @@ body {
   margin-right: 5px;
   height: 100%;
   padding: 10px;
-  margin-left: 10px; /* move this to adjust the space between sign-in and menu */
+  margin-left: 10px;
+ /* move this to adjust the space between sign-in and menu */
 }
-
 .bar {
   display: block;
   width: 20px;
@@ -74,50 +72,47 @@ body {
   background-color: #fff;
   margin: 4px 0;
 }
-
 .menu-btn:hover, .menu-options li:hover {
-  background-color: #3793AB; /* navy 2 */
+  background-color: #3793AB;
+ /* navy 2 */
 }
-
 /* adjust the chatbot screen */
 .content {
   padding: 0px;
 }
-
 /* menu options UI */
 .menu-options {
   display: none;
-  position: fixed; /* Position the menu relative to the viewport */
+  position: fixed;
+ /* Position the menu relative to the viewport */
   top: 54px;
   left: 0;
   width:100%;
   height: calc(100dvh - 54px);
-  background-color: #065577; /* navy 4 */
-  z-index: 999; /* Ensure the menu appears above other content */
-  padding: 0; /* Add padding to the menu content */
+  background-color: #065577;
+ /* navy 4 */
+  z-index: 999;
+ /* Ensure the menu appears above other content */
+  padding: 0;
+ /* Add padding to the menu content */
 }
-
 .menu-options.active {
   display: block;
 }
-
 .menu-options ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .menu-options li {
   padding: 20px;
   text-align: center;
   cursor: pointer;
 }
-
 .menu-options a {
   color: #fff;
   text-decoration: none;
 }
-
 .close-btn {
   color: #fff;
   background: #065577;
@@ -126,25 +121,70 @@ body {
   cursor: pointer;
   padding: 10px;
 }
-
 .close-btn:hover {
   background-color: #118cc1;
 }
 /* end of menu options UI */
-
+.warningofAI {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: auto;
+  width: 75%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+ /* gray 1 */
+  padding: 20px;
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+.aiwarningmessage {
+ /* Center the text vertically and horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  color: #454540;
+  margin-bottom: 50px;
+}
+.overlayaiwarning {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 998;
+}
+.close-btn-aiwarning {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+ /* add to the center */
+  transform: translateX(-50%);
+  color: #454540;
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+}
 #webchatcanvas {
   display: block;
   height: calc(100dvh - 107px);
   width: 100%;
   margin: 0 auto;
 }
-
 /* Media query for larger screens */
-/* at this time it will only adjust how
-the chatbot is showed */
+/* at this time it will only adjust how the chatbot is showed */
 @media (min-width: 768px) {
   #webchatcanvas {
-    width: 70%;
-    margin: 0 auto;
-  }
+      width: 70%;
+      margin: 0 auto;
+ }
 }

@@ -18,13 +18,13 @@
       <div class="header">
         <h1 class="title">Digital Companion</h1>
         <a href="#">
-          <button class="sign-in">Sign In</button>
+        <button class="sign-in">Sign In</button>
         </a>
         <!-- Hamburguer menu design-->
         <button class="menu-btn" aria-label="Toggle Menu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
         </button>
         <!-- end of Hamburguer menu -->
       </div>
@@ -45,6 +45,17 @@
       </nav>
     </header>
     <!-- START OF BODY -->
+    <div class="overlayaiwarning" id="overlayaiwarning">
+      <div class="warningofAI" id="warningofAI">
+        <span class="aiwarningmessage">This tool is powered by AI technology and answers are generated from information found in the BYU Pathway website and our BYU Pathway Knowledge Article website. 
+        Although AI generated responses are highly accurate, you may have instances of inaccuracy or incomplete answers. 
+        This tool will provide references to the relevant sections of those websites, and you are encouraged to verify the answers. 
+        Your interactions will be kept for analysis and overall quality control purposes.
+        Feedback can be provided using the Feedback option in the menu button.
+        </span>
+        <button class="close-btn-aiwarning" onclick="this.parentElement.style.display='none';" id="close-btn-aiwarning">Continue</button>
+      </div>
+    </div>
     <!-- show copilot/virtual agent/chatbot canvas -->
     <div class="content">
       <div id="webchatcanvas"></div>

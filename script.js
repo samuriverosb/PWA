@@ -229,3 +229,9 @@ document.addEventListener('DOMContentLoaded', function () {
       menuOptions.classList.remove('active');
     });
   });
+
+  //remove background overlay after closing AI message
+  document.getElementById('close-btn-aiwarning').addEventListener('click', function() {
+    document.getElementById('overlayaiwarning').style.display = 'none'; // Hide the dark overlay
+    document.getElementById('warningofAI').style.display = 'none'; // Hide the ai message
+  });

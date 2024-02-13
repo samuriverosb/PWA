@@ -1,3 +1,14 @@
+:root{
+  --bar-width: 60px;
+  --bar-height: 8px;
+  --hamburguer-gap: 6px;
+  --foreground: #333;
+  --background: white;
+  --hamburguer-margin: 8px;
+  --animation-timing: 200ms ease-in-out;
+  --menu-icon-height: calc(var(--bar-height) * 3 + var(--hamburguer-gap) * 2);
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
@@ -55,16 +66,87 @@ body {
 .sign-in:hover {
   background-color: #FED77E; /* gold 5 */
 }
-
+/* menu btn css - Gabe */
 .menu-btn {
-  background: none;
+  --x-width: calc(var(--menu-icon-height) * 1.41421356237);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--hamburguer-gap);
+  width: max-content;
+  position: absolute;
+  top: var(--hamburguer-margin);
+  right: var(--hamburguer-margin);
+  z-index: 999999;
+  cursor: pointer
+/*   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
   margin-right: 5px;
   height: 100%;
   padding: 10px;
-  margin-left: 10px; /* move this to adjust the space between sign-in and menu */
+  margin-left: 10px; */ /* move this to adjust the space between sign-in and menu */
+}
+
+.menu-btn:has(input:checked){
+  --foreground:white;
+  --background:#333;
+}
+
+.menu-btn::before,
+.menu-btn::after,
+.menu-btn input{
+    content: "";
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: var(--foreground);
+    border-radius: 9999px;
+    transform-origin: left center;
+    transition: opacity var(--animation-timing), width var(--animation-timing), rotate var(--animation-timing), translate var(--animation-timing), background-color var(--animation-timing)
+}
+
+.menu-btn input{
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+}
+
+.menu-btn:has(input:checked)::before {
+  rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / -2);
+}
+
+.menu-btn:has(input:checked)::after {
+  rotate: -45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / 2);
+}
+
+.menu-btn input:checked{
+  opacity: 0;
+  width: 0;
+}
+
+.sidebar {
+  transition: translate var(--animation-timing);
+  translate: 100%;
+  padding: 0.5rem 1rem;
+  padding-top: calc(var(--menu-icon-height) + var(--hamburguer-margin) + 1rem);
+  background-color: var(--foreground);
+  color: var(--background);
+  max-width: 170vh;
+  width: 100px;
+  min-height: 170vh;
+  z-index: 9999;
+
+}
+
+.menu-btn:has(input:checked) + .sidebar {
+  translate: 0;
 }
 
 .bar {
@@ -93,7 +175,7 @@ body {
   width:100%;
   height: calc(100dvh - 54px);
   background-color: #065577; /* navy 4 */
-  z-index: 999; /* Ensure the menu appears above other content */
+  z-index: 9999; /* Ensure the menu appears above other content */
   padding: 0; /* Add padding to the menu content */
 }
 

@@ -151,17 +151,6 @@ body {
   display: flex;
   translate: 0;
 }
-.sidebar div{
-display: contents;
-}
-
-.bar {
-  display: block;
-  width: 20px;
-  height: 3px;
-  background-color: #fff;
-  margin: 4px 0;
-}
 
 .menu-options li:hover {
   background-color: #3793AB; /* navy 2 */

@@ -2,11 +2,28 @@
   --bar-width: 30px;
   --bar-height: 4px;
   --hamburguer-gap: 6px;
-  --foreground: #333;
-  --background: white;
   --hamburguer-margin: 8px;
   --animation-timing: 200ms ease-in-out;
   --menu-icon-height: calc(var(--bar-height) * 3 + var(--hamburguer-gap) * 2);
+  /* Colors */
+  /*Navy*/
+  --navy1:#eceff2;
+  --navy2:#3793ab;
+  --navy3:#065577; /* System */
+  --navy4:#0d3354;
+  --navy5:#042642;
+  /*Gold*/
+  --gold1:#ffefd0;
+  --gold2:#FED77E;
+  --gold3:#ffc328;
+  --gold4:#eba51b;
+  --gold5:#c28912;
+  /*Neutral Gray*/
+  --gray1: #f1f2f2;
+  --gray2: #e6e7e8;
+  --gray3: #bcbeb0;
+  --gray4: #454540;
+  
 }
 
 body {
@@ -18,7 +35,7 @@ body {
 
 /* BYU-Pathway Logo and background format*/
 .headerlogo {
-  background-color: #FFC328;/* gold 3 with gray 4 logo*/
+  background-color: var(--gold3);
   width: 65px;
   height: 55px;
   position: absolute;
@@ -37,8 +54,8 @@ body {
 }
 
 .header {
-  background-color: #065577; /* navy 3 */
-  color: #fff;
+  background-color: var(--navy3);
+  color: var(--navy1);
   height: 53px;
   display: flex;
   align-items: center;
@@ -55,9 +72,9 @@ body {
 .sign-in {
   border: none;
   cursor: pointer;
-  color: #454540 /* gray 4 */;
+  color: var(--gray4);
   font-weight: bolder;
-  background-color: #FFC328;
+  background-color: var(--gold3);
   padding: 8px;
   border-radius: 5px;
   margin-left: auto;
@@ -65,7 +82,7 @@ body {
 }
 
 .sign-in:hover {
-  background-color: #FED77E; /* gold 5 */
+  background-color: var(--gold5);
 }
 /* menu btn css - Gabe */
 .menu-btn {
@@ -83,7 +100,7 @@ body {
 }
 
 .menu-btn:has(input:checked){
-  --background:#333;
+  --background: var(--navy1);
 }
 
 .menu-btn::before,
@@ -92,10 +109,16 @@ body {
     content: "";
     width: var(--bar-width);
     height: var(--bar-height);
-    background-color: var(--foreground);
+    background-color: var(--navy1);
     border-radius: 9999px;
     transform-origin: left center;
     transition: opacity var(--animation-timing), width var(--animation-timing), rotate var(--animation-timing), translate var(--animation-timing), background-color var(--animation-timing)
+}
+
+.menu-btn:hover::before,
+.menu-btn:hover::after,
+.menu-btn:hover input {
+  background-color: var(--navy4); /* Add your hover styles here */
 }
 
 .menu-btn input{
@@ -127,44 +150,53 @@ body {
   transition: translate var(--animation-timing);
   translate: 100%;
   padding: 0.5rem 1rem;
-  padding-top: calc(var(--menu-icon-height) + var(--hamburguer-margin) + 1rem);
-  background-color: #065577;
-  color: var(--background);
+  background-color: var(--navy4);
+  color: var(--navy1);
   max-width: 100vw;
   width: 120px;
-  height: 200px;
+  height: 160px;
   z-index: 9999;
   position: absolute;
   display: none;
   right: var(--hamburguer-margin);
   border: 0;
   margin: 0;
+
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .sidebar.create{
+  margin-top: 53px;
   display: flex;
   transition: translate var(--animation-timing);
   right: 0;
 }
 
 .sidebar.active {
+  margin-top: 53px;
   display: flex;
   translate: 0;
 }
-.sidebar div{
-display: contents;
+.menu-options {
+  padding: 7px;
+}
+
+.menu-options:hover{
+  color: var(--gold2);
+  cursor: pointer;
 }
 
 .bar {
   display: block;
   width: 20px;
   height: 3px;
-  background-color: #fff;
+  background-color: var(--navy1);
   margin: 4px 0;
 }
 
 .menu-options li:hover {
-  background-color: #3793AB; /* navy 2 */
+  background-color: var(--navy2)
 }
 
 /* adjust the chatbot screen */

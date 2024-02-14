@@ -151,7 +151,6 @@ body {
   translate: 100%;
   padding: 0.5rem 1rem;
   background-color: var(--navy4);
-  color: var(--navy1);
   max-width: 100vw;
   width: 120px;
   height: 160px;
@@ -180,6 +179,11 @@ body {
 }
 .menu-options {
   padding: 7px;
+}
+
+.sidebar a{
+  text-decoration: none;
+  color: var(--navy1);
 }
 
 .menu-options:hover{

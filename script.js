@@ -235,3 +235,40 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('overlayaiwarning').style.display = 'none'; // Hide the dark overlay
     document.getElementById('warningofAI').style.display = 'none'; // Hide the ai message
   });
+
+
+  // EVENT LISTENER TO CHECK FOR OTHER TYPING INSTANCES
+document.addEventListener('DOMContentLoaded', function () {
+  // Function to log the latest node with the desired content
+  function logLatestNode(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'childList') {
+        const latestNode = mutation.target.lastElementChild;
+        if (latestNode && containsDesiredContent(latestNode)) {
+          document.getElementById('overlayaiwarning').classList.remove("hide");
+        }
+      }
+    }
+  }
+
+  // Options for the Mutation Observer
+  const options = {
+    childList: true,
+    subtree: true,
+  };
+
+  // Create a Mutation Observer
+  const observer = new MutationObserver(logLatestNode);
+
+  // Target the div with the id "webchatcanvas"
+  const webchatcanvasElement = document.getElementById('webchatcanvas');
+
+  // Observe changes in the div
+  observer.observe(webchatcanvasElement, options);
+
+  // Helper function to check if a node contains the desired content
+  function containsDesiredContent(node) {
+    const pElement = node.querySelector('.webchat__basic-transcript__activity-body .webchat__stacked-layout__content .webchat__stacked-layout__message-row .webchat__stacked-layout__message .webchat__bubble__content div p');
+    return pElement && pElement.textContent.trim().startsWith('Type your question below');
+  }
+});

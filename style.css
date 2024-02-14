@@ -178,9 +178,13 @@ body {
 }
 #webchatcanvas {
   display: block;
-  height: calc(100dvh - 107px);
+  height: calc(100dvh - 53px);
   width: 100%;
   margin: 0 auto;
+}
+
+.hide {
+  display: none;
 }
 /* Media query for larger screens */
 /* at this time it will only adjust how the chatbot is showed */
@@ -188,5 +192,6 @@ body {
   #webchatcanvas {
       width: 70%;
       margin: 0 auto;
+      height: calc(100dvh - 107px);
  }
 }

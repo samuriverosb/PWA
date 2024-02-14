@@ -166,14 +166,14 @@ body {
 }
 
 .sidebar.create{
-  margin-top: 53px;
+  margin-top: 52px;
   display: flex;
   transition: translate var(--animation-timing);
   right: 0;
 }
 
 .sidebar.active {
-  margin-top: 53px;
+  margin-top: 52px;
   display: flex;
   translate: 0;
 }

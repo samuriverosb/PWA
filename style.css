@@ -80,15 +80,26 @@ body {
 .content {
   padding: 0px;
 }
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent; /* adjust size as needed */
+  border-right: 10px solid transparent; /* adjust size as needed */
+  border-bottom: 20px solid #FFC328; /* adjust size and color as needed */
+  position: fixed;
+  top: 47px;
+  right: 15px;
+}
 /* menu options UI */
 .menu-options {
   display: none;
   position: fixed;
+  border-top: 10px solid #FFC328;
  /* Position the menu relative to the viewport */
-  top: 54px;
-  left: 0;
-  width:100%;
-  height: calc(100dvh - 54px);
+  top: 61px;
+  right: 8px;
+  width: 300px;
   background-color: #065577;
  /* navy 4 */
   z-index: 999;
@@ -113,17 +124,7 @@ body {
   color: #fff;
   text-decoration: none;
 }
-.close-btn {
-  color: #fff;
-  background: #065577;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 10px;
-}
-.close-btn:hover {
-  background-color: #118cc1;
-}
+
 /* end of menu options UI */
 .warningofAI {
   position: fixed;

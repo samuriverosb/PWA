@@ -215,28 +215,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-  // Open and close menu button in header
-  document.addEventListener('DOMContentLoaded', function() {
-    const menuButton = document.querySelector('.menu-btn');
-    const menuOptions = document.querySelector('.menu-options');
-    const closeButton = document.querySelector('.close-btn');
-  
-    menuButton.addEventListener('click', function() {
-      menuOptions.classList.toggle('active');
-    });
-  
-    closeButton.addEventListener('click', function() {
-      menuOptions.classList.remove('active');
-    });
-  });
-
-  //remove background overlay after closing AI message
-  document.getElementById('close-btn-aiwarning').addEventListener('click', function() {
-    document.getElementById('overlayaiwarning').style.display = 'none'; // Hide the dark overlay
-    document.getElementById('warningofAI').style.display = 'none'; // Hide the ai message
-  });
-
-
   // EVENT LISTENER TO CHECK FOR OTHER TYPING INSTANCES
 document.addEventListener('DOMContentLoaded', function () {
   // Function to log the latest node with the desired content
@@ -272,3 +250,60 @@ document.addEventListener('DOMContentLoaded', function () {
     return pElement && pElement.textContent.trim().startsWith('Type your question below');
   }
 });
+
+
+// Open and close menu button in header
+
+document.addEventListener('DOMContentLoaded', () => {
+  const menuButton = document.querySelector('.menu-btn');
+  const menuOptions = document.querySelector('.menu-options');
+  const moreButton = document.querySelector('#more-menu');
+
+  moreButton.addEventListener('click', () => {
+    menuOptions.classList.toggle('active');
+  });
+
+  menuButton.addEventListener('click', () => {
+    menuOptions.classList.toggle('active');
+  });
+});
+
+
+//remove background overlay after closing AI message
+document.getElementById('close-btn-aiwarning').addEventListener('click', function() {
+  document.getElementById('overlayaiwarning').style.display = 'none'; // Hide the dark overlay
+  document.getElementById('warningofAI').style.display = 'none'; // Hide the ai message
+});
+
+//remove background overlay after closing AI message
+document.getElementById('close-btn-ai').addEventListener('click', function() {
+  document.getElementById('overlayai').classList.toggle('hide-instructions'); // Hide the dark overlay
+  document.getElementById('warningAI').classList.toggle('hide-instructions'); // Hide the ai message
+});
+
+const hide = () => {
+  document.getElementById('overlayai').classList.toggle('hide-instructions'); // Hide the dark overlay
+  document.getElementById('warningAI').classList.toggle('hide-instructions'); // Hide the ai message
+  document.querySelector('.menu-options').classList.toggle('active')
+}
+
+function renderSurvey(parentElementId,FirstName, LastName, locale) {
+  var se = new SurveyEmbed(
+    "s-7mYddfqkquPGHo3rCbeXJy5-Msh1hAuP8J_f5SwtJUNERES08yVEdQNUVOS1o4NDlFUFVFQlFZNi4u",
+    "https://customervoice.microsoft.com/",
+    "https://mfpembedcdnwus2.azureedge.net/mfpembedcontwus2/",
+    "true"
+  );
+  var context = {
+    "First Name": FirstName,
+    "Last Name": LastName,
+    "locale": locale,
+  };
+  se.renderInline('form-container', context);}
+
+const hideForm = () => {
+  document.getElementById('form-container').classList.toggle('hide-form'); // Hide the dark overlay
+  document.getElementById('background-form').classList.toggle('hide-form'); // Hide the ai message
+  renderSurvey();
+  document.querySelector('.menu-options').classList.toggle('active')
+}

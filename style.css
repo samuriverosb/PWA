@@ -40,15 +40,13 @@ body {
 .sign-in {
   border: none;
   cursor: pointer;
-  color: #454540 
- /* gray 4 */
- ;
+  color: #454540;
   font-weight: bolder;
   background-color: #FFC328;
   padding: 8px;
   border-radius: 5px;
   margin-left: auto;
-  margin-right: 0px;
+  margin-right: 15px;
 }
 .sign-in:hover {
   background-color: #FED77E;
@@ -64,6 +62,7 @@ body {
   padding: 10px;
   margin-left: 10px;
  /* move this to adjust the space between sign-in and menu */
+ display: none;
 }
 .bar {
   display: block;
@@ -82,6 +81,7 @@ body {
 }
 
 .triangle {
+  display: none;
   width: 0;
   height: 0;
   border-left: 10px solid transparent; /* adjust size as needed */
@@ -95,12 +95,13 @@ body {
 .menu-options {
   display: none;
   position: fixed;
-  border-top: 10px solid #FFC328;
+  border-bottom: 10px solid #FFC328;
  /* Position the menu relative to the viewport */
-  top: 61px;
+  bottom: 65px;
   right: 8px;
   width: 300px;
   background-color: #065577;
+  max-height: fit-content;
  /* navy 4 */
   z-index: 999;
  /* Ensure the menu appears above other content */
@@ -177,9 +178,98 @@ body {
   padding-left: 30px;
   margin-bottom: 8px;
 }
+
+.warningAI {
+  position: fixed;
+  font-size: 14px;
+  top: 50%;
+  left: 50%;
+  height: auto;
+  width: 75%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+ /* gray 1 */
+  padding: 20px;
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+.aimessage {
+ /* Center the text vertically and horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  color: #454540;
+  margin-bottom: 50px;
+}
+.overlayai {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 998;
+}
+.close-btn-ai {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #454540;
+  background: #FFC328;
+  font-weight: bolder;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-bottom: 8px;
+}
+
+.hide-instructions, .hide-form {
+  display: none;
+}
+
+.instructions {
+  margin-bottom: 50px;
+}
+
+.form-container {
+  position: fixed;
+  font-size: 14px;
+  top: 50%;
+  left: 50%;
+  height: 70%;
+  width: 75%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+ /* gray 1 */
+  padding: 20px;
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  max-width: 850px;
+}
+
+.background-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 998;
+}
+
 #webchatcanvas {
   display: block;
-  height: calc(100dvh - 53px);
+  height: calc(100dvh - 106px);
   width: 100%;
   margin: 0 auto;
 }
@@ -187,6 +277,70 @@ body {
 .hide {
   display: none;
 }
+
+#chat-logo-container {
+  background-color: #FFC328;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  border-radius: 40px;
+  margin-top: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.bottom-menu {
+  background-color: #065577;
+  height: 53px;
+}
+
+.bottom-menu nav {
+  height: 100%;
+}
+
+.bottom-menu ul {
+  display: flex;
+  margin: 0;
+  justify-content: space-evenly;
+  list-style: none;
+  padding: 0;
+  height: 100%;
+}
+
+.bottom-menu ul li {
+  text-decoration: none;
+  cursor: pointer;
+  height: 100%;
+}
+
+.bottom-menu ul li:hover {
+  background-color: #3793AB;
+}
+
+.bottom-menu ul li div {
+  width: 50px;
+  text-align: center;
+  height: 100%;
+}
+
+.bottom-menu ul li div a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.bottom-menu ul li div img {
+  display: block;
+  width: 25px;
+  margin: auto;
+  padding-top: 5px;
+}
+
+
+
 /* Media query for larger screens */
 /* at this time it will only adjust how the chatbot is showed */
 @media (min-width: 768px) {
@@ -194,5 +348,64 @@ body {
       width: 70%;
       margin: 0 auto;
       height: calc(100dvh - 107px);
- }
+  }
+
+  .bottom-menu {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .sign-in {
+    margin-right: 0px;
+  }
+
+  .triangle {
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent; /* adjust size as needed */
+    border-right: 10px solid transparent; /* adjust size as needed */
+    border-bottom: 20px solid #FFC328; /* adjust size and color as needed */
+    position: fixed;
+    top: 47px;
+    right: 15px;
+  }
+
+  /* menu options UI */
+  .menu-options {
+    display: none;
+    position: fixed;
+    border-top: 10px solid #FFC328;
+    border-bottom: none;
+  /* Position the menu relative to the viewport */
+    top: 61px;
+    right: 8px;
+    width: 300px;
+    background-color: #065577;
+  /* navy 4 */
+    z-index: 999;
+  /* Ensure the menu appears above other content */
+    padding: 0;
+  /* Add padding to the menu content */
+  }
+  .menu-options.active {
+    display: block;
+  }
+  .menu-options ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .menu-options li {
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .menu-options a {
+    color: #fff;
+    text-decoration: none;
+  }
 }
